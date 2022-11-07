@@ -97,11 +97,12 @@ def train_model(data_args, model_args, training_args, raw_datasets):
     tokenizer = AutoTokenizer.from_pretrained(
         model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
     )
-    model = AutoModelForSeq2SeqLM.from_pretrained(
+    model = T5ForConditionalGenerationWithWeightedLoss.from_pretrained(
         model_args.model_name_or_path,
         from_tf=bool(".ckpt" in model_args.model_name_or_path),
         config=config,
     )
+    model.loss_weights = model_args.loss_weights
 
     # Make sure datasets are here and select a subset if specified
     if training_args.do_train:
