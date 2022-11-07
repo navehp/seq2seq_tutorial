@@ -104,8 +104,3 @@ def load_metrics_for_generation(metrics: Optional[Union[List[str], str]] = None,
             metric_funcs[metric] = meteor
 
     return metric_funcs
-
-
-def freeze_embeds(model):
-    for p in model.get_input_embeddings().parameters():
-        p.requires_grad = False

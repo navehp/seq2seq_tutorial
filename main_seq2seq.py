@@ -102,8 +102,6 @@ def train_model(data_args, model_args, training_args, raw_datasets):
         from_tf=bool(".ckpt" in model_args.model_name_or_path),
         config=config,
     )
-    if training_args.freeze_embeds:
-        freeze_embeds(model)
 
     # Make sure datasets are here and select a subset if specified
     if training_args.do_train:
