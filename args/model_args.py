@@ -19,6 +19,3 @@ class ModelArguments:
     tokenizer_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained tokenizer name or path if not the same as model_name_or_path"}
     )
-    loss_weights: Optional[str] = field(
-        default=None, metadata={"help": "Loss weights for each task"}
-    )

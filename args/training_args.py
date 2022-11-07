@@ -14,10 +14,6 @@ class ProjectSeq2SeqTrainingArguments(Seq2SeqTrainingArguments):
                           "Notice that by default the metrics receives only predictions and labels, "
                           "for specific behavior refer to utils.train_utils.get_compute_metrics."}
     )
-    freeze_embeds: bool = field(
-        default=False,
-        metadata={"help": "Freeze embeddings during training"}
-    )
 
     def __post_init__(self):
         super().__post_init__()
