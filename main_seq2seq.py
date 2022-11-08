@@ -193,7 +193,7 @@ def main():
 
     # Set extra arguments here
     if training_args.run_name == AUTO:
-        training_args.run_name = f"epochs={training_args.num_train_epochs}_batch={training_args.per_device_train_batch_size}_lr={training_args.learning_rate}"
+        training_args.run_name = f"batch={training_args.per_device_train_batch_size}_lr={training_args.learning_rate}"
     if training_args.output_dir == AUTO:
         training_args.output_dir = EXPERIMENTS_DIR / training_args.run_name
 

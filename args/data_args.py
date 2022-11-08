@@ -14,7 +14,7 @@ class DataTrainingArguments:
     the command line.
     """
     dataset: Optional[str] = field(
-        default=IMDB,
+        default=XSUM,
         metadata={"help": "The name of the dataset to use (via the datasets library)."}
     )
     max_seq_length: int = field(
